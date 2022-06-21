@@ -52,6 +52,8 @@ void call(Map parameters = [:], String stepName, String metadataFile, List crede
             ansHookServiceKeyCredentialsId =
                 DefaultValueCache.getInstance().getDefaultValues().hooks?.ans?.serviceKeyCredentialsId
             config += ["ansHookServiceKeyCredentialsId": ansHookServiceKeyCredentialsId]
+            println "MMMMMMMMMM config = $config"
+            println "NNNNNNNNNN ansHookServiceKeyCredentialsId = $ansHookServiceKeyCredentialsId"
 
             // prepare stashes
             // first eliminate empty stashes
