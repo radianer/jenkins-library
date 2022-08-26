@@ -90,7 +90,7 @@ log entry content as follows:
   | fatal | FATAL | EXCEPTION |
   | panic | FATAL | EXCEPTION |
 
-- `subject`: short description of the event (defaults to the step name, but
+- `subject`: short description of the event (defaults to 'Step <step_name> sends <severity>', but
   can be overwritten with the event template)
 - `body`: the log message
 - `priority`: (optional) an integer number in the range [1:1000] (not set by
@@ -102,9 +102,9 @@ log entry content as follows:
     event template)
   - `ans:sourceEventId`: also set to the "Piper" correlation ID (can also be
     overwritten with the event template)
-  - `pipeline:stepName`: the "Piper" step name
-  - `pipeline:logLevel`: the "Piper" log level
-  - `pipeline:errorCategory`: the "Piper" error category, if available
+  - `cicd:stepName`: the "Piper" step name
+  - `cicd:logLevel`: the "Piper" log level
+  - `cicd:errorCategory`: the "Piper" error category, if available
 
 - `resource`: the following default properties are set by "Piper":
 
