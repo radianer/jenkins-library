@@ -368,6 +368,7 @@ private String generatePodSpec(Map config) {
 
 private String stashWorkspace(config, prefix, boolean chown = false, boolean stashBack = false) {
     def stashName = "${prefix}-${config.uniqueId}"
+    echo('----config: ' + config.toMapString())
     try {
         if (chown) {
             def securityContext = getSecurityContext(config)
@@ -386,7 +387,7 @@ chown -R ${runAsUser}:${fsGroup} ."""
             includes = config.stashIncludes.workspace
             excludes = config.stashExcludes.workspace
         }
-
+        echo("---- includes: ${includes}   excludes: ${excludes}")
         stash(
             name: stashName,
             includes: includes,
